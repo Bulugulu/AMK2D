@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Employee : MonoBehaviour
+public class Employee : UnityEngine.Object
 {
     public string Name;
     public string AvatarPath;
+    public int ExpectedSalary; // K USD
     public int CodeRate; // K Lines per Q
     public int ExperienceYears;
     public int BugFixRate; // per Q
