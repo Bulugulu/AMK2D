@@ -5,9 +5,11 @@ using UnityEngine;
 // GAME MANAGER SINGLETON
 public class GameManger : MonoBehaviour
 {
+    private const int DEFAULT_YEAR = 1980;
+    private const int DEFAULT_QUARTER = 2;
+
     private GameManger() {
-        CurrentYear = 2023;
-        CurrentQuarter = 2;
+        Reset();
     }
 
     private static GameManger _instance;
@@ -32,7 +34,33 @@ public class GameManger : MonoBehaviour
         protected set;
     }
 
-   private void Awake()
+    public EmployeePool EmployeesPool
+    {
+        get;
+    }
+
+    public string NextTurn()
+    {
+        if (CurrentQuarter == 4)
+        {
+            CurrentQuarter = 1;
+            ++CurrentYear;
+        }
+        else
+        {
+            ++CurrentQuarter;
+        }
+        
+        return CurrentTimeString;
+    }
+
+    public void Reset ()
+    {
+        CurrentYear = DEFAULT_YEAR;
+        CurrentQuarter = DEFAULT_QUARTER;
+    }
+
+    private void Awake()
     {
         if (Instance == null)
             _instance = this;

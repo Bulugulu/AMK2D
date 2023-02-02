@@ -18,6 +18,11 @@ public class Playground : MonoBehaviour
         Debug.Log($"Five employees named: {fiveEmps[0].Name}, {fiveEmps[1].Name}, {fiveEmps[2].Name}, {fiveEmps[3].Name}, {fiveEmps[4].Name}");
 
         Debug.Log($"Current Time: {GameManger.Instance.CurrentTimeString}");
+        Debug.Log($"Next Turn!: {GameManger.Instance.NextTurn()}");
+        Debug.Log($"Next Turn!: {GameManger.Instance.NextTurn()}");
+        Debug.Log($"Next Turn!: {GameManger.Instance.NextTurn()}");
+        Debug.Log($"Next Turn!: {GameManger.Instance.NextTurn()}");
+        Debug.Log($"Next Turn!: {GameManger.Instance.NextTurn()}");
     }
 
     // Update is called once per frame
