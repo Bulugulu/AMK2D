@@ -8,6 +8,7 @@ public class Player : UnityEngine.Object
     {
         CurrentEmployees = new List<Employee>();
         Budget = 100;
+        BugCount = 0;
     }
 
     public readonly string CompanyName = "AMK Inc.";
@@ -16,6 +17,11 @@ public class Player : UnityEngine.Object
     {
         get;
         protected set;
+    }
+    public int BugCount
+    {
+        get;
+        set;
     }
     public List<Employee> CurrentEmployees 
     {
