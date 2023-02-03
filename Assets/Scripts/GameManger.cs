@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 // GAME MANAGER SINGLETON
@@ -7,6 +8,13 @@ public class GameManger : MonoBehaviour
 {
     private const int DEFAULT_YEAR = 1980;
     private const int DEFAULT_QUARTER = 2;
+    private const int HIRING_POOL_SIZE = 3;
+
+    public GameObject EmployeeProfilePrefab;
+    public GameObject HiringGridUI;
+    public EmployeeLoaderV2 EmployeeLoader;
+
+    private Player PlayerInfo;
 
     private GameManger() {
         Reset();
@@ -37,6 +45,16 @@ public class GameManger : MonoBehaviour
     public EmployeePool EmployeesPool
     {
         get;
+        protected set;
+    }
+
+    public void HireEmployee(Employee emp, GameObject employeeProfileView)
+    {
+        Debug.Log("Hiring employee!");
+        PlayerInfo.CurrentEmployees.Add(emp);
+
+        // TODO: move to hired employees view instead of destroying
+        Destroy(employeeProfileView);
     }
 
     public string NextTurn()
@@ -58,6 +76,33 @@ public class GameManger : MonoBehaviour
     {
         CurrentYear = DEFAULT_YEAR;
         CurrentQuarter = DEFAULT_QUARTER;
+        EmployeesPool = new EmployeePool();
+        PlayerInfo = new Player();
+    }
+
+    public void PopulateHiringUI()
+    {
+        var employees = EmployeesPool.GetEmployees(HIRING_POOL_SIZE);
+
+        for (int i=0; i< HIRING_POOL_SIZE; ++i)
+        {
+            var emp = employees[i];
+
+            var employeeProfile = Instantiate(EmployeeProfilePrefab);
+            var empView = employeeProfile.GetComponent<EmployeeView>();
+            empView.employeeData = emp;
+            empView.UpdateView();
+
+            employeeProfile.transform.SetParent(HiringGridUI.transform, false);
+        }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        EmployeesPool.PopulateEmployees(EmployeeLoader);
+
+        PopulateHiringUI();
     }
 
     private void Awake()

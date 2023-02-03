@@ -8,28 +8,13 @@ public class EmployeePool : UnityEngine.Object
 {
     public EmployeePool()
     {
-        PopulateEmployees();
     }
 
     private List<Employee> availableEmployees;
-    public void PopulateEmployees()
+    public void PopulateEmployees(EmployeeLoaderV2 empLoader)
     {
         availableEmployees = new List<Employee>();
-        // TODO: replace with loading employees from JSON files
-        for (int i=0; i<10; ++i)
-        {
-            var emp = new Employee();
-            emp.Name = "Employee #" + i;
-            emp.ExpectedSalary = Random.Range(10,100);
-            emp.CodeRate = Random.Range(1,10);
-            emp.BugCreationRate = Random.Range(0,10);
-            emp.BugFixRate = Random.Range(0,3);
-            emp.ExperienceYears = Random.Range(0,20);
-            emp.Openness = (OpennessRating) Random.Range(0,2);
-            emp.Conscientiousness = (ConscientiousnessRating) Random.Range(0,2);
-
-            availableEmployees.Add(emp);
-        }
+        availableEmployees.AddRange(empLoader.myEmployeeList.employee);
     }
 
     public Employee GetSampleEmployee()
