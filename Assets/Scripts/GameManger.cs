@@ -12,8 +12,9 @@ public class GameManger : MonoBehaviour
 
     public GameObject EmployeeProfilePrefab;
     public GameObject HiringGridUI;
-
     public EmployeeLoaderV2 EmployeeLoader;
+
+    private Player PlayerInfo;
 
     private GameManger() {
         Reset();
@@ -47,6 +48,14 @@ public class GameManger : MonoBehaviour
         protected set;
     }
 
+    public void HireEmployee(Employee emp, GameObject employeeProfileView)
+    {
+        PlayerInfo.CurrentEmployees.Add(emp);
+
+        // TODO: move to hired employees view instead of destroying
+        Destroy(employeeProfileView);
+    }
+
     public string NextTurn()
     {
         if (CurrentQuarter == 4)
@@ -67,6 +76,7 @@ public class GameManger : MonoBehaviour
         CurrentYear = DEFAULT_YEAR;
         CurrentQuarter = DEFAULT_QUARTER;
         EmployeesPool = new EmployeePool();
+        PlayerInfo = new Player();
     }
 
     public void PopulateHiringUI()
