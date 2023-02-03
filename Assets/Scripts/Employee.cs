@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
+// T Serializable makes this class able to be serialized, for use in Json. Uses the "System" assembly.
+[Serializable] 
 public class Employee : UnityEngine.Object
 {
     public string Name;
@@ -15,12 +18,14 @@ public class Employee : UnityEngine.Object
     public OpennessRating Openness;
 }
 
+[Serializable]
 public enum ConscientiousnessRating {
     Low = 0,
     Medium = 1,
     High = 2
 }
 
+[Serializable]
 public enum OpennessRating {
     Low = 0,
     Medium = 1,
