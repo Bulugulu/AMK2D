@@ -18,11 +18,12 @@ public class EmployeeLoaderV2 : MonoBehaviour
     }
 
     public EmployeeList myEmployeeList = new EmployeeList();
+    public bool Initialized = false;
 
-    void Start()
+    void Awake()
     {
         myEmployeeList = JsonUtility.FromJson<EmployeeList>(JSON.text);
-
+        Initialized = true;
     }
 
     // Update is called once per frame
