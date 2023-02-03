@@ -32,6 +32,21 @@ public class EmployeePool : UnityEngine.Object
         }
     }
 
+    public Employee GetSampleEmployee()
+    {
+        var emp = new Employee();
+        emp.Name = "Sample Employee";
+        emp.ExpectedSalary = 10;
+        emp.CodeRate = 5;
+        emp.BugCreationRate = 100;
+        emp.BugFixRate = 1;
+        emp.ExperienceYears = 2;
+        emp.Openness = OpennessRating.Low;
+        emp.Conscientiousness = ConscientiousnessRating.Low;
+
+        return emp;
+    }
+
     public int AvailableEmployeesCount()
     {
         return availableEmployees.Count;
