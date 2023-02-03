@@ -8,7 +8,6 @@ public class EmployeePool : UnityEngine.Object
 {
     public EmployeePool()
     {
-        PopulateEmployees();
     }
 
     private List<Employee> availableEmployees;
