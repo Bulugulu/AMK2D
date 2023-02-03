@@ -5,7 +5,7 @@ using System;
 
 // T Serializable makes this class able to be serialized, for use in Json. Uses the "System" assembly.
 [Serializable] 
-public class Employee : UnityEngine.Object
+public class Employee 
 {
     public string Name;
     public string AvatarPath;
