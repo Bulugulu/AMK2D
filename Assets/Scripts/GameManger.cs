@@ -13,6 +13,7 @@ public class GameManger : MonoBehaviour
     public GameObject EmployeeProfilePrefab;
     public GameObject HiringGridUI;
 
+    public EmployeeLoaderV2 EmployeeLoader;
 
     private GameManger() {
         Reset();
@@ -99,7 +100,7 @@ public class GameManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EmployeesPool.PopulateEmployees();
+        EmployeesPool.PopulateEmployees(EmployeeLoader);
 
         PopulateHiringUI();
     }
