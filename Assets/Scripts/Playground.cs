@@ -30,6 +30,13 @@ public class Playground : MonoBehaviour
         Debug.Log($"Hired two employees named: {player.CurrentEmployees[0].Name}, {player.CurrentEmployees[1].Name}");
         player.FireEmployee(player.CurrentEmployees[0]);
         Debug.Log($"Fired someone. Now we have: {player.CurrentEmployees[0].Name}");
+        player.FireEmployee(player.CurrentEmployees[0]);
+        Debug.Log($"Fired everyone.");
+        player.HireEmployee(pool.GetSampleEmployee());
+        Debug.Log($"Hired sample employee. Now we have: {player.CurrentEmployees[0].Name}");
+        
+        var qResult = BigNumbersMachine.CrunchNumbers(player);
+        Debug.Log($"Your quarterly report - {qResult}");
     }
 
     // Update is called once per frame
