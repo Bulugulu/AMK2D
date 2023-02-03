@@ -10,6 +10,7 @@ public class Playground : MonoBehaviour
     {
         var player = new Player();
         var pool = new EmployeePool();
+        pool.PopulateEmployees();
         var twoEmps = pool.GetEmployees(2);
         var threeEmps = pool.GetEmployees(3);
         var fiveEmps = pool.GetEmployees(5);
