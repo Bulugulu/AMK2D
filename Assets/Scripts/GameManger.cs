@@ -12,7 +12,9 @@ public class GameManger : MonoBehaviour
 
     public GameObject EmployeeProfilePrefab;
     public GameObject HiringGridUI;
+    public EmployeeLoaderV2 EmployeeLoader;
 
+    private Player PlayerInfo;
 
     private GameManger() {
         Reset();
@@ -46,6 +48,15 @@ public class GameManger : MonoBehaviour
         protected set;
     }
 
+    public void HireEmployee(Employee emp, GameObject employeeProfileView)
+    {
+        Debug.Log("Hiring employee!");
+        PlayerInfo.CurrentEmployees.Add(emp);
+
+        // TODO: move to hired employees view instead of destroying
+        Destroy(employeeProfileView);
+    }
+
     public string NextTurn()
     {
         if (CurrentQuarter == 4)
@@ -66,6 +77,7 @@ public class GameManger : MonoBehaviour
         CurrentYear = DEFAULT_YEAR;
         CurrentQuarter = DEFAULT_QUARTER;
         EmployeesPool = new EmployeePool();
+        PlayerInfo = new Player();
     }
 
     public void PopulateHiringUI()
@@ -74,23 +86,12 @@ public class GameManger : MonoBehaviour
 
         for (int i=0; i< HIRING_POOL_SIZE; ++i)
         {
+            var emp = employees[i];
+
             var employeeProfile = Instantiate(EmployeeProfilePrefab);
-            
-            var employeeName = employeeProfile.transform.Find("Name Panel/Name");
-            var employeeNameText = employeeName.GetComponent<TextMeshProUGUI>();
-            employeeNameText.text = employees[i].Name;
-
-            var employeeSalary = employeeProfile.transform.Find("Name Panel/Salary");
-            var employeeSalaryText = employeeSalary.GetComponent<TextMeshProUGUI>();
-            employeeSalaryText.text = $"Salary Demands: {employees[i].ExpectedSalary}";
-
-            var experienceProperty = employeeProfile.transform.Find("Property Panel/Property 1");
-            var experiencePropertyText = experienceProperty.GetComponent<TextMeshProUGUI>();
-            experiencePropertyText.text = $"Years of experience: {employees[i].ExperienceYears}";
-
-            var codingRateProperty = employeeProfile.transform.Find("Property Panel/Property 2");
-            var codingRatePropertyText = codingRateProperty.GetComponent<TextMeshProUGUI>();
-            codingRatePropertyText.text = $"Code production rate: {employees[i].CodeRate}K lines per quarter";
+            var empView = employeeProfile.GetComponent<EmployeeView>();
+            empView.employeeData = emp;
+            empView.UpdateView();
 
             employeeProfile.transform.SetParent(HiringGridUI.transform, false);
         }
@@ -99,7 +100,7 @@ public class GameManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EmployeesPool.PopulateEmployees();
+        EmployeesPool.PopulateEmployees(EmployeeLoader);
 
         PopulateHiringUI();
     }

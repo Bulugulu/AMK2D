@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8663076997577400916, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0048828125
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
 --- !u!1 &1205938269
@@ -318,6 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1205938271}
   - component: {fileID: 1205938270}
+  - component: {fileID: 1205938272}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -339,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EmployeeProfilePrefab: {fileID: 7952074768465233419, guid: c78187350f9b85b469a88c7a29a6905e, type: 3}
   HiringGridUI: {fileID: 1533948868}
+  EmployeeLoader: {fileID: 1205938272}
 --- !u!4 &1205938271
 Transform:
   m_ObjectHideFlags: 0
@@ -354,6 +360,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205938272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205938269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071b444735a680b4ca0e63f50a8f6fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JSON: {fileID: 4900000, guid: 29078f34651c8d2479d7991b10586b05, type: 3}
+  myEmployeeList:
+    employee: []
 --- !u!1 &1533948868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8663076996756437696, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
