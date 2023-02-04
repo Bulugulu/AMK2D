@@ -49,5 +49,6 @@ public class EmployeeView : MonoBehaviour
     public void EmployeeHireClicked()
     {
         GameManger.Instance.HireEmployee(employeeData, gameObject);
+        GameManger.Instance.PlayBtn2SFX();
     }
 }
