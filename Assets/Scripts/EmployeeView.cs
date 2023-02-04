@@ -16,7 +16,7 @@ public class EmployeeView : MonoBehaviour
 
         var employeeSalary = gameObject.transform.Find("Name Panel/Salary");
         var employeeSalaryText = employeeSalary.GetComponent<TextMeshProUGUI>();
-        employeeSalaryText.text = $"<b>Salary Demands:</b> ${employeeData.ExpectedSalary}K/mo";
+        employeeSalaryText.text = $"<b>Salary Demands:</b> ${employeeData.ExpectedSalary}K per quarter";
 
         var experienceProperty = gameObject.transform.Find("Property Panel/Experience");
         var experiencePropertyText = experienceProperty.GetComponent<TextMeshProUGUI>();
