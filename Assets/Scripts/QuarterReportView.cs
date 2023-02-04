@@ -31,6 +31,14 @@ public class QuarterReportView : MonoBehaviour
 
         var profit = CurrentResults.NewBudget - CurrentResults.PreviousBudget;
 
+        var bugObject = gameObject.transform.Find("Quarterly Report Popup/Media Panel/News Panel/Bugs");
+        var bugObjectText = bugObject.GetComponent<TextMeshProUGUI>();
+        bugObjectText.text = $"Review are in! {CurrentResults.NewBugCount} new bugs were found.";
+        Debug.Log(bugObject);
+        Debug.Log(bugObjectText);
+        Debug.Log(CurrentResults.NewBugCount);
+
+
         if (profit > 0)
         {
             profitResultObjectText.text = $"Profits are up!\nWe made {profit}K USD!";
