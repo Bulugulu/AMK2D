@@ -13,10 +13,10 @@ public class Player : UnityEngine.Object
 
     public readonly string CompanyName = "AMK Inc.";
 
-    public int Budget
+    public int Budget // K USD
     {
         get;
-        protected set;
+        set;
     }
     public int BugCount
     {
