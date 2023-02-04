@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BigNumbersMachine : MonoBehaviour
 {
-    public static readonly int REVENUE_MULTI = 2;
+    public static readonly int REVENUE_MULTI = 1;
     public static readonly int BUG_LOSS_MULTI = 1;
     public static QuarterResults CrunchNumbers(Player player)
     {
@@ -15,7 +15,7 @@ public class BigNumbersMachine : MonoBehaviour
         foreach(Employee emp in player.CurrentEmployees)
         {
             // substract salary from budget
-            newBudget -= emp.ExpectedSalary;
+            newBudget -= emp.ExpectedSalary*3;
 
             // calculate bug production
             float actualBugCreationRate = emp.BugCreationRate - emp.ExperienceYears / 2;

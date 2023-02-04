@@ -16,7 +16,7 @@ public class EmployeeView : MonoBehaviour
 
         var employeeSalary = gameObject.transform.Find("Name Panel/Salary");
         var employeeSalaryText = employeeSalary.GetComponent<TextMeshProUGUI>();
-        employeeSalaryText.text = $"<b>Salary Demands:</b> ${employeeData.ExpectedSalary}";
+        employeeSalaryText.text = $"<b>Salary Demands:</b> ${employeeData.ExpectedSalary}K/mo";
 
         var experienceProperty = gameObject.transform.Find("Property Panel/Experience");
         var experiencePropertyText = experienceProperty.GetComponent<TextMeshProUGUI>();
@@ -24,7 +24,7 @@ public class EmployeeView : MonoBehaviour
 
         var codingRateProperty = gameObject.transform.Find("Property Panel/CodingSpeed");
         var codingRatePropertyText = codingRateProperty.GetComponent<TextMeshProUGUI>();
-        codingRatePropertyText.text = $"<b>Code production rate:</b> {employeeData.CodeRate} lines per quarter";
+        codingRatePropertyText.text = $"<b>Code production rate:</b> {employeeData.CodeRate}K lines per quarter";
 
         var conscientiousnessProperty = gameObject.transform.Find("Property Panel/Conscientiousness");
         var conscientiousnessPropertyText = conscientiousnessProperty.GetComponent<TextMeshProUGUI>();
