@@ -134,9 +134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Source code leaked!
-
-    X lines of this quarter''s code were found online.'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ed931d2b0ecab4e91e3606bf99d640, type: 2}
   m_sharedMaterial: {fileID: -189758025271403386, guid: 61ed931d2b0ecab4e91e3606bf99d640, type: 2}
