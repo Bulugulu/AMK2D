@@ -8,7 +8,7 @@ public class GameManger : MonoBehaviour
 {
     private const int DEFAULT_YEAR = 2023;
     private const int DEFAULT_QUARTER = 1;
-    private const int HIRING_POOL_SIZE = 3;
+    private const int HIRING_POOL_SIZE = 4;
 
 
     public GameObject HiringUI;
