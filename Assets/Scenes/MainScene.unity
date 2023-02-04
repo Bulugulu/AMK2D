@@ -214,6 +214,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4009396074526838486, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 227.24951
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009396074526838486, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -41.19995
+      objectReference: {fileID: 0}
     - target: {fileID: 8663076996499372339, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
       propertyPath: m_Name
       value: Hiring UI
@@ -372,9 +380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071b444735a680b4ca0e63f50a8f6fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JSON: {fileID: 4900000, guid: 29078f34651c8d2479d7991b10586b05, type: 3}
+  JSON: {fileID: 4900000, guid: aad4cd6f7e2906145936122e17922f91, type: 3}
   myEmployeeList:
     employee: []
+  Initialized: 0
 --- !u!1 &1533948868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8663076996756437696, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
