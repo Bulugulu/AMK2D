@@ -144,7 +144,7 @@ public class GameManger : MonoBehaviour
         QRView.CompanyName = PlayerInfo.CompanyName;
         QRView.CurrentResults = new QuarterResults();
         QRView.CurrentResults.NewBudget = PlayerInfo.Budget;
-        QRView.CurrentResults.PreviousBudget = PlayerInfo.Budget;
+        QRView.CurrentResults.PreviousBudget = PlayerInfo.Budget+150; // start at a loss of 150K
         QRView.CurrentResults.NewBugCount = PlayerInfo.BugCount;
         QRView.UpdateView();
     }
