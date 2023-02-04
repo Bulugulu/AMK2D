@@ -29,6 +29,23 @@ public class Player : UnityEngine.Object
         protected set;
     }
 
+    public int GetSalariesTotal()
+    {
+        int salaryTotal = 0;
+
+        foreach(Employee emp in CurrentEmployees)
+        {
+            salaryTotal += emp.ExpectedSalary;
+        }
+
+        return salaryTotal;
+    }
+
+    public int GetRemainingBudget()
+    {
+        return Budget - GetSalariesTotal();
+    }
+
     public void HireEmployee(Employee emp)
     {
         CurrentEmployees.Add(emp);

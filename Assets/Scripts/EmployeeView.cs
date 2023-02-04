@@ -48,6 +48,10 @@ public class EmployeeView : MonoBehaviour
 
     public void EmployeeHireClicked()
     {
-        GameManger.Instance.HireEmployee(employeeData, gameObject);
+        if (GameManger.Instance.TryHireEmployee(employeeData, gameObject) == false)
+        {
+            // Failed to hire employee.
+            // TODO: Show a message explaining what happend!
+        }
     }
 }
