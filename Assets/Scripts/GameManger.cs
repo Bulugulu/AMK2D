@@ -55,9 +55,10 @@ public class GameManger : MonoBehaviour
     {
         Debug.Log("Hiring employee!");
         PlayerInfo.CurrentEmployees.Add(emp);
-
-        // TODO: move to hired employees view instead of destroying
         Destroy(employeeProfileView);
+
+        var hiringView = HiringUI.GetComponent<HiringUIView>();
+        hiringView.UpdateView();
     }
 
     public void NextTurn()
