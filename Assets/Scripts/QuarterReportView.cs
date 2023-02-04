@@ -34,10 +34,16 @@ public class QuarterReportView : MonoBehaviour
         var bugObject = gameObject.transform.Find("Quarterly Report Popup/Media Panel/News Panel/Bugs");
         var bugObjectText = bugObject.GetComponent<TextMeshProUGUI>();
         bugObjectText.text = $"Reviews are in! {CurrentResults.NewBugCount} new bugs were found.";
-        Debug.Log(bugObject);
-        Debug.Log(bugObjectText);
-        Debug.Log(CurrentResults.NewBugCount);
 
+        var codeObject = gameObject.transform.Find("Quarterly Report Popup/Media Panel/News Panel/LinesofCode");
+        var codeObjectText = codeObject.GetComponent<TextMeshProUGUI>();
+        codeObjectText.text = $"Source code leaked! {CurrentResults.NewCodeTotal},000 lines of code were found online.";
+
+        if (CurrentResults.NewCodeTotal == 0)
+        {
+            codeObjectText.text = "";
+
+        }
 
         if (profit > 0)
         {
