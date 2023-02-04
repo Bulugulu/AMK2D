@@ -89,6 +89,10 @@ public class GameManger : MonoBehaviour
 
     public void PopulateHiringUI()
     {
+        var currencyStatus = HiringUI.transform.Find("Currency Panel/Currency");
+        var currencyStatusText = currencyStatus.GetComponent<TextMeshProUGUI>();
+        currencyStatusText.text = $"{PlayerInfo.Budget}K USD";
+
         var employees = EmployeesPool.GetEmployees(HIRING_POOL_SIZE);
 
         for (int i=0; i< HIRING_POOL_SIZE; ++i)
@@ -112,6 +116,7 @@ public class GameManger : MonoBehaviour
         // we start with a quarter report
         HiringUI.SetActive(false);
         QuarterReportUI.SetActive(true);
+
         var QRView = QuarterReportUI.GetComponent<QuarterReportView>();
         QRView.Year = CurrentYear;
         QRView.Quarter = CurrentQuarter;
