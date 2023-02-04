@@ -51,14 +51,21 @@ public class GameManger : MonoBehaviour
         protected set;
     }
 
-    public void HireEmployee(Employee emp, GameObject employeeProfileView)
+    public bool TryHireEmployee(Employee emp, GameObject employeeProfileView)
     {
-        Debug.Log("Hiring employee!");
+        if (PlayerInfo.GetRemainingBudget() < emp.ExpectedSalary)
+        {
+            // Can't hire this employee :(
+            return false;
+        }
+
         PlayerInfo.CurrentEmployees.Add(emp);
         Destroy(employeeProfileView);
 
         var hiringView = HiringUI.GetComponent<HiringUIView>();
         hiringView.UpdateView();
+
+        return true;
     }
 
     public void NextTurn()
