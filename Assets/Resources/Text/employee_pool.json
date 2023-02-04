@@ -10,7 +10,7 @@
           "ExperienceYears": 0,
           "Openness": 0,
           "Concientiousness": 1,
-          "AvatarPath": "img/emp/emp-female-4.png"
+          "AvatarPath": "img/emp/emp-female-4"
         },
       {
         "Name": "Bryant Bond",
@@ -22,7 +22,7 @@
         "ExperienceYears": 16,
         "Openness": 1,
         "Concientiousness": 1,
-        "AvatarPath": "img/emp/emp-male-5.png"
+        "AvatarPath": "img/emp/emp-male-5"
       },
       {
         "Name": "Susan Ellison",
@@ -34,7 +34,7 @@
         "ExperienceYears": 19,
         "Openness": 1,
         "Concientiousness": 1,
-        "AvatarPath": "img/emp/emp-female-2.png"
+        "AvatarPath": "img/emp/emp-female-2"
       },
       {
         "Name": "Francis Dalton",
@@ -46,7 +46,7 @@
         "ExperienceYears": 5,
         "Openness": 1,
         "Concientiousness": 1,
-        "AvatarPath": "img/emp/emp-male-6.png"
+        "AvatarPath": "img/emp/emp-male-6"
       },
       {
         "Name": "Lizzie Ramsey",
@@ -58,7 +58,7 @@
         "ExperienceYears": 0,
         "Openness": 1,
         "Concientiousness": 0,
-        "AvatarPath": "img/emp/emp-female-8.png"
+        "AvatarPath": "img/emp/emp-female-8"
       },
       {
         "Name": "Cooley Harris",
@@ -70,7 +70,7 @@
         "ExperienceYears": 4,
         "Openness": 0,
         "Concientiousness": 0,
-        "AvatarPath": "img/emp/emp-male-0.png"
+        "AvatarPath": "img/emp/emp-male-0"
       },
       {
         "Name": "Prince Livingston",
@@ -82,7 +82,7 @@
         "ExperienceYears": 0,
         "Openness": 0,
         "Concientiousness": 0,
-        "AvatarPath": "img/emp/emp-male-2.png"
+        "AvatarPath": "img/emp/emp-male-2"
       },
       {
         "Name": "Rose Hancock",
@@ -94,7 +94,7 @@
         "ExperienceYears": 11,
         "Openness": 0,
         "Concientiousness": 0,
-        "AvatarPath": "img/emp/emp-female-6.png"
+        "AvatarPath": "img/emp/emp-female-6"
       },
       {
         "Name": "Valarie Lindsay",
@@ -106,7 +106,7 @@
         "ExperienceYears": 5,
         "Openness": 1,
         "Concientiousness": 1,
-        "AvatarPath": "img/emp/emp-female-5.png"
+        "AvatarPath": "img/emp/emp-female-5"
       },
       {
         "Name": "Chris Campbell",
@@ -118,7 +118,7 @@
         "ExperienceYears": 10,
         "Openness": 1,
         "Concientiousness": 0,
-        "AvatarPath": "img/emp/emp-male-3.png"
+        "AvatarPath": "img/emp/emp-male-3"
       },
       {
         "Name": "Sheppard Eaton",
@@ -130,7 +130,7 @@
         "ExperienceYears": 3,
         "Openness": 0,
         "Concientiousness": 0,
-        "AvatarPath": "img/emp/emp-male-4.png"
+        "AvatarPath": "img/emp/emp-male-4"
       }
     ]
 }
