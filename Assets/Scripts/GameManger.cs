@@ -140,7 +140,9 @@ public class GameManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         EmployeesPool.PopulateEmployees(EmployeeLoader);
+        PlayerInfo.CurrentEmployees.Add(EmployeesPool.GetEmployee(2));
 
         // we start with a quarter report
         HiringUI.SetActive(false);
