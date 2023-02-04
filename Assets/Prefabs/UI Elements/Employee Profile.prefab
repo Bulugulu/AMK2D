@@ -946,6 +946,7 @@ GameObject:
   - component: {fileID: 5496717622339605799}
   - component: {fileID: 3253579878957813122}
   - component: {fileID: 7744500930304067957}
+  - component: {fileID: 6601937014158082924}
   m_Layer: 5
   m_Name: Avatar
   m_TagString: Untagged
@@ -1011,6 +1012,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6601937014158082924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5013290415875579330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5795471220985070672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1436,7 @@ GameObject:
   - component: {fileID: 267692960031426580}
   - component: {fileID: 5259847026483772241}
   - component: {fileID: 663148321233787832}
+  - component: {fileID: 1421858733822224204}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1485,6 +1502,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1421858733822224204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138826969345480870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8362039585940550189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,7 +1545,7 @@ RectTransform:
   m_GameObject: {fileID: 8362039585940550189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6187, y: 1.6187, z: 1.6187}
+  m_LocalScale: {x: 4.80468, y: 4.80468, z: 4.80468}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8973743003953818622}
@@ -1522,7 +1554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.015883075}
   m_AnchorMax: {x: 1, y: 0.015883075}
-  m_AnchoredPosition: {x: -25, y: 23}
+  m_AnchoredPosition: {x: -67.29999, y: 1.2161865}
   m_SizeDelta: {x: 30, y: 24.468704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5024062639646826522
@@ -1586,7 +1618,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.02676327, g: 0.4433962, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
