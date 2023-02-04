@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8663076996499372339, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8663076996499372343, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
       propertyPath: m_Pivot.x
@@ -350,6 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0068309a234605a4db705d89e3821968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HiringUI: {fileID: 1834183330}
+  QuarterReportUI: {fileID: 1520424611}
   EmployeeProfilePrefab: {fileID: 7952074768465233419, guid: c78187350f9b85b469a88c7a29a6905e, type: 3}
   HiringGridUI: {fileID: 1533948868}
   EmployeeLoader: {fileID: 1205938272}
@@ -384,6 +386,27 @@ MonoBehaviour:
   myEmployeeList:
     employee: []
   Initialized: 0
+--- !u!1 &1520424611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9040907143773432090, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+  m_PrefabInstance: {fileID: 1587699635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1520424617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520424611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f46f7bb6ebb0f64384677c376740468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentResults: {fileID: 0}
+  Year: 0
+  Quarter: 0
+  CompanyName: 
 --- !u!1 &1533948868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8663076996756437696, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
@@ -396,6 +419,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9040907141947733695, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040907141947733695, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040907141947733695, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1520424617}
+    - target: {fileID: 9040907141947733695, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040907141947733695, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnContinueButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040907141947733695, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuarterReportView, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040907141947733695, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9040907143773432090, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
       propertyPath: m_Name
       value: Quarterly Report Screen
@@ -490,3 +541,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d53e691ca3de1cd46bb8f407770ecd05, type: 3}
+--- !u!1 &1834183330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8663076996499372339, guid: 010e0eef015749c4ba4edd1f52e856f0, type: 3}
+  m_PrefabInstance: {fileID: 596974637}
+  m_PrefabAsset: {fileID: 0}
