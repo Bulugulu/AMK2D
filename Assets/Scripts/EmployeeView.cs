@@ -8,7 +8,7 @@ public class EmployeeView : MonoBehaviour
 {
     public Employee employeeData;
 
-    public void UpdateView()
+    public void UpdateView(bool hired = false)
     {
         var employeeName = gameObject.transform.Find("Name Panel/Name");
         var employeeNameText = employeeName.GetComponent<TextMeshProUGUI>();
@@ -16,7 +16,7 @@ public class EmployeeView : MonoBehaviour
 
         var employeeSalary = gameObject.transform.Find("Name Panel/Salary");
         var employeeSalaryText = employeeSalary.GetComponent<TextMeshProUGUI>();
-        employeeSalaryText.text = $"<b>Salary Demands:</b> ${employeeData.ExpectedSalary}K/mo";
+        employeeSalaryText.text = $"<b>Salary Demands:</b> ${employeeData.ExpectedSalary}K per quarter";
 
         var experienceProperty = gameObject.transform.Find("Property Panel/Experience");
         var experiencePropertyText = experienceProperty.GetComponent<TextMeshProUGUI>();
@@ -37,8 +37,13 @@ public class EmployeeView : MonoBehaviour
         var avatar = gameObject.transform.Find("Avatar");
         var avatarImage = Resources.Load<Sprite>($"{employeeData.AvatarPath}");
         avatar.GetComponent<Image>().sprite = avatarImage;
-        Debug.Log(avatar);
-        Debug.Log(avatarImage);
+        
+        if (hired)
+        {
+            gameObject.transform.Find("Hire Button").gameObject.SetActive(false);
+            var backgroundImage = gameObject.transform.Find("Background").GetComponent<Image>();
+            backgroundImage.color = Color.gray;
+        }
     }
 
     public void EmployeeHireClicked()
