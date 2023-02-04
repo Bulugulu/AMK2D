@@ -19,6 +19,9 @@ public class GameManger : MonoBehaviour
     public EmployeeLoaderV2 EmployeeLoader;
 
     public AudioSource btnSFX;
+    public AudioSource profitSFX;
+    public AudioSource lossSFX;
+    public AudioSource musicLoop;
 
     private Player PlayerInfo;
 
@@ -92,6 +95,15 @@ public class GameManger : MonoBehaviour
     public void FinalizeHiring()
     {
         var newQuarterResults = BigNumbersMachine.CrunchNumbers(PlayerInfo);
+
+        // play audio feedback based on result difference
+        musicLoop.volume = 0.05f;
+        if (PlayerInfo.Budget < newQuarterResults.NewBudget)
+        {
+            profitSFX.Play();
+        } else {
+            lossSFX.Play();
+        }
 
         PlayerInfo.Budget = newQuarterResults.NewBudget;
         PlayerInfo.BugCount = newQuarterResults.NewBugCount;
