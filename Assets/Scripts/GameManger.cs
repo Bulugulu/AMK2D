@@ -6,9 +6,12 @@ using UnityEngine;
 // GAME MANAGER SINGLETON
 public class GameManger : MonoBehaviour
 {
-    private const int DEFAULT_YEAR = 1980;
-    private const int DEFAULT_QUARTER = 2;
+    private const int DEFAULT_YEAR = 2023;
+    private const int DEFAULT_QUARTER = 1;
     private const int HIRING_POOL_SIZE = 3;
+
+    public GameObject HiringUI;
+    public GameObject QuarterReportUI;
 
     public GameObject EmployeeProfilePrefab;
     public GameObject HiringGridUI;
@@ -57,7 +60,7 @@ public class GameManger : MonoBehaviour
         Destroy(employeeProfileView);
     }
 
-    public string NextTurn()
+    public void NextTurn()
     {
         if (CurrentQuarter == 4)
         {
@@ -69,7 +72,11 @@ public class GameManger : MonoBehaviour
             ++CurrentQuarter;
         }
         
-        return CurrentTimeString;
+        // move to hiring screen
+        QuarterReportUI.SetActive(false);
+        HiringUI.SetActive(true);
+
+        PopulateHiringUI();
     }
 
     public void Reset ()
@@ -102,7 +109,18 @@ public class GameManger : MonoBehaviour
     {
         EmployeesPool.PopulateEmployees(EmployeeLoader);
 
-        PopulateHiringUI();
+        // we start with a quarter report
+        HiringUI.SetActive(false);
+        QuarterReportUI.SetActive(true);
+        var QRView = QuarterReportUI.GetComponent<QuarterReportView>();
+        QRView.Year = CurrentYear;
+        QRView.Quarter = CurrentQuarter;
+        QRView.CompanyName = PlayerInfo.CompanyName;
+        QRView.CurrentResults = new QuarterResults();
+        QRView.CurrentResults.NewBudget = PlayerInfo.Budget;
+        QRView.CurrentResults.PreviousBudget = PlayerInfo.Budget;
+        QRView.CurrentResults.NewBugCount = PlayerInfo.BugCount;
+        QRView.UpdateView();
     }
 
     private void Awake()
