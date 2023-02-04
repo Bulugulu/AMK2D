@@ -30,7 +30,7 @@ public class GameManger : MonoBehaviour
 
     public string CurrentTimeString
     {
-        get {return $"{CurrentYear}-Q{CurrentQuarter}";}
+        get {return $"{CurrentYear}Q{CurrentQuarter}";}
     }
 
     public int CurrentYear
@@ -79,6 +79,27 @@ public class GameManger : MonoBehaviour
         PopulateHiringUI();
     }
 
+    public void FinalizeHiring()
+    {
+        var newQuarterResults = BigNumbersMachine.CrunchNumbers(PlayerInfo);
+
+        PlayerInfo.Budget = newQuarterResults.NewBudget;
+        PlayerInfo.BugCount = newQuarterResults.NewBugCount;
+
+        // move to quarter report
+        HiringUI.SetActive(false);
+        QuarterReportUI.SetActive(true);
+
+        var QRView = QuarterReportUI.GetComponent<QuarterReportView>();
+        QRView.Year = CurrentYear;
+        QRView.Quarter = CurrentQuarter;
+        QRView.CompanyName = PlayerInfo.CompanyName;
+        QRView.CurrentResults = newQuarterResults;
+        QRView.UpdateView();
+
+        Debug.Log($"Current budget is {PlayerInfo.Budget}");
+    }
+
     public void Reset ()
     {
         CurrentYear = DEFAULT_YEAR;
@@ -89,9 +110,9 @@ public class GameManger : MonoBehaviour
 
     public void PopulateHiringUI()
     {
-        var currencyStatus = HiringUI.transform.Find("Currency Panel/Currency");
-        var currencyStatusText = currencyStatus.GetComponent<TextMeshProUGUI>();
-        currencyStatusText.text = $"{PlayerInfo.Budget}K USD";
+        var hiringView = HiringUI.GetComponent<HiringUIView>();
+        hiringView.PlayerInfo = PlayerInfo;
+        hiringView.UpdateView();
 
         var employees = EmployeesPool.GetEmployees(HIRING_POOL_SIZE);
 

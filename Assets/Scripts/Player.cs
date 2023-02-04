@@ -16,7 +16,7 @@ public class Player : UnityEngine.Object
     public int Budget // K USD
     {
         get;
-        protected set;
+        set;
     }
     public int BugCount
     {
