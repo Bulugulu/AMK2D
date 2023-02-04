@@ -11,8 +11,9 @@ public class BigNumbersMachine : MonoBehaviour
 
         int newBudget = player.Budget;
         int newBugCount = player.BugCount;
+        int newCodeTotal = 0;
 
-        foreach(Employee emp in player.CurrentEmployees)
+        foreach (Employee emp in player.CurrentEmployees)
         {
             // substract salary from budget
             newBudget -= emp.ExpectedSalary*3;
@@ -31,6 +32,11 @@ public class BigNumbersMachine : MonoBehaviour
             int employeeRevenue = emp.CodeRate * codeQuality * REVENUE_MULTI;
 
             newBudget += employeeRevenue;
+
+            // Total Code Production
+
+            newCodeTotal = newCodeTotal + emp.CodeRate;
+            Debug.Log($"New lines of code: {newCodeTotal}");
         }
 
         // Process bugs
@@ -46,6 +52,7 @@ public class BigNumbersMachine : MonoBehaviour
 
         results.NewBudget = newBudget;
         results.NewBugCount = newBugCount;
+        results.NewCodeTotal = newCodeTotal;
 
         return results;
     }
@@ -56,6 +63,7 @@ public class QuarterResults: UnityEngine.Object
     public int PreviousBudget;
     public int NewBudget;
     public int NewBugCount;
+    public int NewCodeTotal;
 
     public override string ToString()
     {

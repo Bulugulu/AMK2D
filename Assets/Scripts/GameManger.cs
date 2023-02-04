@@ -53,14 +53,21 @@ public class GameManger : MonoBehaviour
         protected set;
     }
 
-    public void HireEmployee(Employee emp, GameObject employeeProfileView)
+    public bool TryHireEmployee(Employee emp, GameObject employeeProfileView)
     {
-        Debug.Log("Hiring employee!");
+        if (PlayerInfo.GetRemainingBudget() < emp.ExpectedSalary)
+        {
+            // Can't hire this employee :(
+            return false;
+        }
+
         PlayerInfo.CurrentEmployees.Add(emp);
         Destroy(employeeProfileView);
 
         var hiringView = HiringUI.GetComponent<HiringUIView>();
         hiringView.UpdateView();
+
+        return true;
     }
 
     public void NextTurn()
@@ -139,7 +146,9 @@ public class GameManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         EmployeesPool.PopulateEmployees(EmployeeLoader);
+        PlayerInfo.CurrentEmployees.Add(EmployeesPool.GetEmployee(2));
 
         // we start with a quarter report
         HiringUI.SetActive(false);
@@ -154,6 +163,14 @@ public class GameManger : MonoBehaviour
         QRView.CurrentResults.PreviousBudget = PlayerInfo.Budget+150; // start at a loss of 150K
         QRView.CurrentResults.NewBugCount = PlayerInfo.BugCount;
         QRView.UpdateView();
+    }
+
+    void Update()
+    {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     private void Awake()

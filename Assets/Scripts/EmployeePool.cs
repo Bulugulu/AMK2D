@@ -54,4 +54,12 @@ public class EmployeePool : UnityEngine.Object
         }
         return returnedEmployees;
     }
+
+    public Employee GetEmployee(int index)
+    {
+        Employee emp = availableEmployees[index];
+        availableEmployees.RemoveAt(index);
+        
+        return emp;
+    }
 }

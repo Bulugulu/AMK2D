@@ -31,6 +31,10 @@ public class HiringUIView : MonoBehaviour
                 RenderedEmployees.Add(emp);
             }
         }
+
+        var salariesStatus = gameObject.transform.Find("Salaries Panel/Salaries");
+        var salariesStatusText = salariesStatus.GetComponent<TextMeshProUGUI>();
+        salariesStatusText.text = $"Salaries total:\n{PlayerInfo.GetSalariesTotal()}K USD per quarter";
     }
 
     public void OnContinueButtonClicked()
