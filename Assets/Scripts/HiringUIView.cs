@@ -16,8 +16,11 @@ public class HiringUIView : MonoBehaviour
         var currencyStatusText = currencyStatus.GetComponent<TextMeshProUGUI>();
         currencyStatusText.text = $"{PlayerInfo.Budget}K USD";
 
+        int salaryTotal = 0;
+
         foreach(Employee emp in PlayerInfo.CurrentEmployees)
         {
+            salaryTotal += emp.ExpectedSalary;
             // Only render new hires
             if (RenderedEmployees.Contains(emp) == false)
             {
@@ -31,6 +34,10 @@ public class HiringUIView : MonoBehaviour
                 RenderedEmployees.Add(emp);
             }
         }
+
+        var salariesStatus = gameObject.transform.Find("Salaries Panel/Salaries");
+        var salariesStatusText = salariesStatus.GetComponent<TextMeshProUGUI>();
+        salariesStatusText.text = $"Salaries total:\n{salaryTotal}K USD per quarter";
     }
 
     public void OnContinueButtonClicked()
