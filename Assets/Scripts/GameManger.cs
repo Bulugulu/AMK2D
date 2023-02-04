@@ -10,12 +10,15 @@ public class GameManger : MonoBehaviour
     private const int DEFAULT_QUARTER = 1;
     private const int HIRING_POOL_SIZE = 3;
 
+
     public GameObject HiringUI;
     public GameObject QuarterReportUI;
 
     public GameObject EmployeeProfilePrefab;
     public GameObject HiringGridUI;
     public EmployeeLoaderV2 EmployeeLoader;
+
+    public AudioSource btnSFX;
 
     private Player PlayerInfo;
 
@@ -26,7 +29,6 @@ public class GameManger : MonoBehaviour
     private static GameManger _instance;
 
     public static GameManger Instance { get { return _instance; } }
-
 
     public string CurrentTimeString
     {
@@ -135,6 +137,10 @@ public class GameManger : MonoBehaviour
 
             employeeProfile.transform.SetParent(HiringGridUI.transform, false);
         }
+    }
+
+    public void PlayBtn2SFX() {
+        btnSFX.Play();
     }
 
     // Start is called before the first frame update
